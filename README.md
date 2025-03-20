@@ -8,9 +8,9 @@ The image above shows example images. The exercise assumes you are working on th
 To solve this exercise look through the files in the `source` folder. `TODO`s mark parts of the code that require your attention.
 Come back to this readme for additional hints.
 
-- To get started on the JUWELS Booster load the modules
+- On Bender, load the modules
 ``` bash
-Stages/2023 GCC/11.3.0  OpenMPI/4.1.4 CUDA/11.7 CMake PyTorch
+ml CMake PyTorch CUDA
 ```
 
 - Use `mkdir build` to create your build directory. Change directory into your build folder and compile by running:
@@ -40,6 +40,28 @@ correctly identified digits, by comparing the `argmax` of the network output and
 - Torch devices are defined i.e. by `torch::Device device = torch::kCPU;` move to GPUs by choosing `torch::kCUDA;` if cuda-GPUs are available. 
 
 - Finally iterate over the test data set and compute the test accuracy.
+
+- This code is supposed to run on GPUs. Therefore, use the `A40devel` partition. You can use the following the submit script,
+
+```
+#!/bin/bash
+
+#SBATCH --time=00:05:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --partition=A40devel
+#SBATCH --output=ex_nn_cuda_out.%j
+#SBATCH --error=ex_nn_cuda_err.%j
+
+echo "-- Bash file start --"
+
+ml CMake PyTorch CUDA
+
+./test-net
+
+echo "-- Bash file end --"
+```
 
 -  Train and test your network by executing:
 ```bash
