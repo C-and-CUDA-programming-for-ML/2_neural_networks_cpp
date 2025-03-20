@@ -8,7 +8,7 @@ The image above shows example images. The exercise assumes you are working on th
 To solve this exercise look through the files in the `source` folder. `TODO`s mark parts of the code that require your attention.
 Come back to this readme for additional hints.
 
-- On Bender, load the modules
+- On [Bender](https://www.hpc.uni-bonn.de/en/systems/bender), load the modules
 ``` bash
 ml CMake PyTorch CUDA
 ```
