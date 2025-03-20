@@ -9,7 +9,7 @@ double acc(torch::Tensor& preds, torch::Tensor& labels){
 }
 
 int main() {
-  // Set the seed.
+  //TODO: Set the seed.
 
   // Create a new Net.
   auto net = std::make_shared<Net>();
