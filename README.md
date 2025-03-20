@@ -1,4 +1,4 @@
-## HPC exercise training a neural network on the MNIST data-set.
+## Exercise: Training a neural network on the MNIST data-set.
 - The exercise explores training a neural network using [the torch c++ api](https://pytorch.org/cppdocs/).
 
 ![where_is_waldo](.figures/mnist.png)
