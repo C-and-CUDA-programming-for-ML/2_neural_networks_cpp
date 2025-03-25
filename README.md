@@ -15,7 +15,7 @@ ml CMake PyTorch CUDA
 
 - Use `mkdir build` to create your build directory. Change directory into your build folder and compile by running:
 ```bash
-cmake -DCUDA_CUDA_LIB=/usr/lib64/libcuda.so -DCMAKE_PREFIX_PATH=`python -c 'import torch;print(torch.utils.cmake_prefix_path)'` ..
+cmake -DCMAKE_PREFIX_PATH=`python -c 'import torch;print(torch.utils.cmake_prefix_path)'` ..
 cmake --build . --config Release
 ```
 
